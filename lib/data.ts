@@ -19,9 +19,9 @@ export const PERSONAL = {
   ],
   philosophy: "Governance-first AI isn't a constraint — it's what separates systems that scale from systems that fail.",
   social: {
-    github: 'https://github.com/Stuti19',
+    github: 'https://github.com/Stuti-1908',
     linkedin: 'https://linkedin.com/in/stuti-gohil',
-    twitter: 'https://twitter.com/stutigohil',
+    instagram: 'https://www.instagram.com/stuti_198/',
     dribbble: 'https://linktr.ee/Stuti_1908',
   },
 }

@@ -374,7 +374,8 @@ export default function Navigation() {
               ))}
             </div>
 
-            <div className="relative h-full flex flex-col px-6 pt-24 pb-12">
+            <div className="relative h-full overflow-y-auto overscroll-contain">
+              <div className="flex min-h-full flex-col px-6 pt-24 pb-12">
               {/* Header */}
               <div className="flex items-center justify-between mb-16">
                 <div>
@@ -461,7 +462,7 @@ export default function Navigation() {
               </div>
 
               {/* Footer CTAs */}
-              <div className="mt-auto space-y-3">
+              <div className="mt-auto space-y-3 pt-6">
                 <motion.a
                   href="https://cal.com/stuti-sg19"
                   target="_blank"
@@ -489,6 +490,7 @@ export default function Navigation() {
                 >
                   Send Email
                 </motion.a>
+              </div>
               </div>
             </div>
           </motion.div>

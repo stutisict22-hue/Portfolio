@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef, FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, Github, Linkedin, Twitter, Globe, Mail, Copy, Check } from 'lucide-react'
+import { Send, Github, Linkedin, Instagram, Globe, Mail, Copy, Check } from 'lucide-react'
 import { PERSONAL } from '@/lib/data'
 
 type ContactIntent = 'project' | 'consulting' | 'speaking'
@@ -88,7 +88,7 @@ export default function Contact() {
   const socialLinks = [
     { href: PERSONAL.social.github, icon: Github, label: 'GitHub', color: 'from-gray-600 to-gray-800' },
     { href: PERSONAL.social.linkedin, icon: Linkedin, label: 'LinkedIn', color: 'from-blue-600 to-blue-800' },
-    { href: PERSONAL.social.twitter, icon: Twitter, label: 'Twitter', color: 'from-sky-500 to-cyan-500' },
+    { href: PERSONAL.social.instagram, icon: Instagram, label: 'Instagram', color: 'from-pink-500 to-rose-500' },
     { href: PERSONAL.social.dribbble, icon: Globe, label: 'Linktree', color: 'from-green-500 to-emerald-600' },
   ]
 

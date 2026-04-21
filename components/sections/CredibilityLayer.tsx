@@ -112,7 +112,7 @@ export default function CredibilityLayer() {
           </a>
 
           <a
-            href="https://github.com/Stuti19"
+            href="https://github.com/Stuti-1908"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-medium"
