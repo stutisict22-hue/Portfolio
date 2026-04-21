@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="ora-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f80000"/>
+      <stop offset="100%" style="stop-color:#c70000"/>
+    </linearGradient>
+  </defs>
+  <rect x="15" y="30" width="70" height="40" rx="5" fill="url(#ora-grad)"/>
+  <text x="50" y="57" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">ORACLE</text>
+</svg>
