@@ -52,6 +52,20 @@ export default function Navigation() {
   }, [menuOpen])
 
   useEffect(() => {
+    if (!lenis) return
+
+    if (menuOpen) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+
+    return () => {
+      lenis.start()
+    }
+  }, [menuOpen, lenis])
+
+  useEffect(() => {
     const setupObserver = () => {
       observerRef.current = new IntersectionObserver(
         (entries) => {
@@ -343,14 +357,15 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[1190]"
+            className="fixed inset-0 z-[1190] overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, rgba(15,23,42,0.97) 0%, rgba(30,41,59,0.98) 50%, rgba(15,23,42,0.97) 100%)',
               backdropFilter: 'blur(32px)',
+              overscrollBehavior: 'contain',
             }}
           >
             {/* Animated background particles */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -374,7 +389,15 @@ export default function Navigation() {
               ))}
             </div>
 
-            <div className="relative h-full overflow-y-auto overscroll-contain">
+            <div
+              className="relative h-full overflow-y-auto overscroll-contain"
+              onWheelCapture={(event) => {
+                event.stopPropagation()
+              }}
+              onTouchMove={(event) => {
+                event.stopPropagation()
+              }}
+            >
               <div className="flex min-h-full flex-col px-6 pt-24 pb-12">
               {/* Header */}
               <div className="flex items-center justify-between mb-16">

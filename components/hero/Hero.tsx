@@ -435,7 +435,100 @@ export default function Hero() {
           <path d="M0 100 L0 0 L100 100" fill="none" stroke="url(#cornerGrad)" strokeWidth="0.5" />
         </svg>
       </motion.div>
+
+      <RobotCompanion />
     </section>
+  )
+}
+
+function RobotCompanion() {
+  return (
+    <motion.div
+      className="hidden lg:block absolute bottom-8 right-10 xl:right-14 z-20 pointer-events-none"
+      initial={{ opacity: 0, y: 16, scale: 0.92 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ delay: 1.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <motion.div
+        animate={{ y: [0, -8, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+        className="relative"
+      >
+        <svg width="190" height="220" viewBox="0 0 190 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="robotBody" x1="26" y1="58" x2="150" y2="194" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#FDFDFD" />
+              <stop offset="0.55" stopColor="#ECEFF5" />
+              <stop offset="1" stopColor="#D6DCE6" />
+            </linearGradient>
+            <linearGradient id="robotGold" x1="73" y1="100" x2="125" y2="164" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#EAD29A" />
+              <stop offset="1" stopColor="#C49B4A" />
+            </linearGradient>
+            <radialGradient id="visorGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(95 58) rotate(90) scale(34 56)">
+              <stop stopColor="#0F1A37" />
+              <stop offset="1" stopColor="#060B1B" />
+            </radialGradient>
+          </defs>
+
+          <ellipse cx="95" cy="206" rx="46" ry="8" fill="#031026" fillOpacity="0.45" />
+
+          <rect x="58" y="14" width="74" height="64" rx="26" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+          <rect x="69" y="28" width="52" height="34" rx="15" fill="url(#visorGlow)" />
+
+          <motion.circle
+            cx="84"
+            cy="46"
+            r="6"
+            fill="#67E8F9"
+            animate={{ opacity: [0.75, 1, 0.75], scale: [1, 1.08, 1] }}
+            transition={{ duration: 2.4, repeat: Infinity }}
+          />
+          <motion.circle
+            cx="106"
+            cy="46"
+            r="6"
+            fill="#67E8F9"
+            animate={{ opacity: [0.75, 1, 0.75], scale: [1, 1.08, 1] }}
+            transition={{ duration: 2.4, repeat: Infinity, delay: 0.2 }}
+          />
+
+          <rect x="70" y="82" width="50" height="64" rx="16" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+          <rect x="74" y="99" width="42" height="28" rx="12" fill="url(#robotGold)" fillOpacity="0.9" />
+          <text x="95" y="118" textAnchor="middle" fill="#F8F2E1" style={{ fontSize: '18px', fontWeight: 700, fontFamily: 'var(--font-sora, sans-serif)' }}>
+            G
+          </text>
+
+          <rect x="82" y="146" width="10" height="28" rx="5" fill="url(#robotGold)" />
+          <rect x="98" y="146" width="10" height="28" rx="5" fill="url(#robotGold)" />
+
+          <rect x="70" y="171" width="18" height="30" rx="8" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+          <rect x="102" y="171" width="18" height="30" rx="8" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+
+          <g>
+            <rect x="40" y="90" width="14" height="44" rx="7" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+            <circle cx="47" cy="136" r="8" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+          </g>
+
+          <motion.g
+            animate={{ rotate: [0, 14, 0, -8, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ transformOrigin: '140px 92px' }}
+          >
+            <rect x="136" y="86" width="14" height="38" rx="7" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+            <circle cx="143" cy="126" r="8" fill="url(#robotBody)" stroke="#D7DCE7" strokeWidth="2" />
+          </motion.g>
+        </svg>
+
+        <motion.div
+          className="absolute right-2 top-2 text-[10px] uppercase tracking-[0.26em] text-cyan-200/70"
+          animate={{ opacity: [0.45, 0.9, 0.45] }}
+          transition={{ duration: 2.6, repeat: Infinity }}
+        >
+          AI Buddy
+        </motion.div>
+      </motion.div>
+    </motion.div>
   )
 }
 
